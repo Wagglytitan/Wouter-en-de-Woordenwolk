@@ -9,7 +9,8 @@ var numberOfQuestions;
 //var score=0;
 var niveau1 = document.getElementsByClassName("niveau1");
 var niveau2 = document.getElementsByClassName("niveau2");
-var juisteAntwoorden = [];
+//var juisteAntwoorden = [];
+var antwoorden=new Array();
 
 var backmusic = document.querySelector('audio');
 backmusic.volume = 0.4;
@@ -42,6 +43,29 @@ function getQuestion(){
 
 		displayQuestion();
 		})//gtjson
+
+    $.getJSON('answer1.json', function(data) {
+      var antwoorden = [];
+      for(i=0;i<data.quizlist.length;i++){
+        console.log('answer1');
+      /*antwoorden[i]=new Array;
+      antwoorden[i][0]=data.quizlist[i].question;
+      antwoorden[i][1]=data.quizlist[i].option1;*/
+
+        antwoorden.push('<span>' + '<div class="overzicht"><img class="wolk" src="img/'data.quizlist.length[i]'"></div>'/*data.quizlist.length[i] */+ '</span>');
+
+    //  antwoorden.push('<span>' + data.quizlist.length[i] + '</span>');
+
+
+        console.log('test');
+      }
+      $(".overzicht").html(antwoorden.join(""));
+      console.log('test2');
+
+
+
+ 		//displayAnswers();
+    })//gtjson
 
 	})
 
@@ -110,8 +134,10 @@ if(rnd==3){q3=questionBank[questionNumber][1];q1=questionBank[questionNumber][2]
   //correct answer
   if(this.id==rnd){
 
-    $(this.id).addClass('juist');
+  /*  $(this.id).addClass('juist');
     juisteAntwoorden.push('.juist');
+
+    console.log($(this.id).innerhtml); */
 
    $('#img1').attr('src','woutergroen.png');
    var back = document.querySelector('audio');
@@ -151,12 +177,28 @@ if(rnd==3){q3=questionBank[questionNumber][1];q1=questionBank[questionNumber][2]
 
 
 
+  //function displayAnswers(){
+   /*var rnd=Math.random()*3;
+  rnd=Math.ceil(rnd);*/
+  // var q1;
+
+  //{q1=antwoorden[1];}
+  //  if(rnd==2){q2=questionBank[questionNumber][1];q3=questionBank[questionNumber][2];q1=questionBank[questionNumber][3];q4=questionBank[questionNumber][4];}
+  //  if(rnd==3){q3=questionBank[questionNumber][1];q1=questionBank[questionNumber][2];q2=questionBank[questionNumber][3];q4=questionBank[questionNumber][4];}
+
+  // $(stage).append('<div  class="endText overzicht onzichtbaar">'+antwoorden[0]+'</div><div id="1" class="pix"><img class="wolk" src="img/'+q1+'"></div>');
+
+//  }
+
 
 	function displayFinalSlide(){
 
-		$(stage).append('<div class="endText">Gefeliciteerd je hebt het heel goed gedaan! <div class="overzicht"></div> <FORM> <INPUT TYPE="button" class="reload" onClick="history.go(0)" VALUE="Menu"> </FORM> <FORM> <INPUT TYPE="button" class="choice" VALUE="Keuzescherm"> </FORM></div>')
+		$(stage).append('<div class="endText">Gefeliciteerd je hebt het heel goed gedaan! <div class="overzicht"></div>  <FORM> <INPUT TYPE="button" class="reload" onClick="history.go(0)" VALUE="Menu"> </FORM> <FORM> <INPUT TYPE="button" class="choice" VALUE="Keuzescherm"> </FORM></div>')
 
-    document.getElementsByClassName("overzicht").innerHTML = juisteAntwoorden;
+    $(".overzicht").removeClass("onzichtbaar");
+
+
+
     $(".choice").on("click", function () {
       //location.reload();
       //window.localStorage.clear();

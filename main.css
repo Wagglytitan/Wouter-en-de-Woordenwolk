@@ -409,20 +409,3 @@ and (orientation : landscape) { /* STYLES GO HERE */
 	padding-bottom: 2em;
 	}
 }
-
-
-
-/* De animatie code */
-@keyframes example {
-    from {background-color: red;}
-    to {background-color: yellow;}
-}
-
-/* Het element waar de animatie op toegepast is */
-div {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    animation-name: example;
-    animation-duration: 4s;
-}

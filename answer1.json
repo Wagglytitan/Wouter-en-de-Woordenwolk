@@ -1,0 +1,21 @@
+{"quizlist":[
+
+	{
+	"question":"AUTO",
+	"option1":"auto.png"
+	},
+	{
+	"question":"CADEAU",
+	"option1":"cadeau.png"
+	},
+	{
+	"question":"GIETER",
+	"option1":"gieter.png"
+  },
+	{
+	"question":"HANDDOEK",
+	"option1":"handdoek.png"
+  }
+
+]
+}
