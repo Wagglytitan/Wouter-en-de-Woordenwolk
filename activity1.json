@@ -1,0 +1,33 @@
+{"quizlist":[
+
+	{
+	"question":"AUTO",
+	"option1":"auto.png",
+	"option2":"fiets.png",
+	"option3":"bus.png",
+	"audio":"auto.mp3"
+	},
+	{
+	"question":"CADEAU",
+	"option1":"cadeau.png",
+	"option2":"doos.png",
+	"option3":"bal.png",
+	"audio":"cadeau.mp3"
+	},
+	{
+	"question":"GIETER",
+	"option1":"gieter.png",
+	"option2":"waterslang.png",
+	"option3":"schup.png",
+	"audio":"gieter.mp3"
+  },
+	{
+	"question":"HANDDOEK",
+	"option1":"handdoek.png",
+	"option2":"slippers.png",
+	"option3":"producten.png",
+	"audio":"handdoek.mp3"
+  }
+
+]
+}

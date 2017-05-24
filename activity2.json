@@ -1,0 +1,32 @@
+{"quizlist":[
+
+	{
+	"question":"FOTOTOESTEL",
+	"option1":"camera.png",
+	"option2":"videocamera.png",
+	"option3":"laptop.png",
+	"audio":"fototoestel.mp3"
+	},
+	{
+	"question":"BATTERIJ",
+	"option1":"batterij.png",
+	"option2":"licht.png",
+	"option3":"contact.png",
+	"audio":"batterij.mp3"
+	},
+	{
+	"question":"HELICOPTER",
+	"option1":"helicopter.png",
+	"option2":"vliegtuig.png",
+	"option3":"motor.png",
+	"audio":"helicopter.mp3"
+  },
+	{
+	"question":"COWBOY",
+	"option1":"cowboy.png",
+	"option2":"indiaan.png",
+	"option3":"piraat.png",
+	"audio":"cowboy.mp3"
+  }
+]
+}

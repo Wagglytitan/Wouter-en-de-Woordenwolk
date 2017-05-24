@@ -1,0 +1,32 @@
+{"quizlist":[
+
+	{
+	"question":"FRUITSCHAAL",
+	"option1":"fruitschaal.png",
+	"option2":"kookpot.png",
+	"option3":"vergiet.png",
+	"audio":"fruitschaal.mp3"
+	},
+	{
+	"question":"ANANAS",
+	"option1":"ananas.png",
+	"option2":"watermeloen.png",
+	"option3":"druiven.png",
+	"audio":"ananas.mp3"
+	},
+	{
+	"question":"HELM",
+	"option1":"helm.png",
+	"option2":"bril.png",
+	"option3":"laarzen.png",
+	"audio":"helm.mp3"
+  },
+	{
+	"question":"KOORTS",
+	"option1":"koorts.png",
+	"option2":"verkouden.png",
+	"option3":"hoest.png",
+	"audio":"koorts.mp3"
+  }
+]
+}
