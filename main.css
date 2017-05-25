@@ -6,14 +6,39 @@ html, body {
 		overflow-x: hidden;
 	    }
 
+footer{
+	position: absolute;
+  right: 0;bottom:0;left:0;
+}
+
+#bottombar{
+	font-family: 'Baloo';
+	color: #0D47A1;
+	padding-left: 2em;
+	}
+
 .Htekst{
 	font-family: 'Baloo', cursive;
 	color: #0D47A1;
 }
 
-.overzicht{
-	background-color: green;
+.overzichttekst{
+	font-family: 'Baloo', cursive;
+	color: #0D47A1;
+	font-size: 2em;
+	text-align: center;
+	margin-top: -15em;
 }
+
+.endbutton{
+	margin-top: 1em;
+	margin:auto;
+}
+
+.reload{
+	padding-right: 2em;
+}
+
 
 .wouterH{
 	width: 6em;
@@ -54,13 +79,19 @@ input{
 
 .buttons{
 	width: 5em;
-	margin-top: -10em;
+	margin-top: -17em;
 	margin-left: 50em;
+}
+
+.overzicht{
+	width: 59em;
+	margin-top: -1em;
+	margin-left: 32em;
 }
 
 #navContent{
 margin:auto;
-margin-top: -8em;
+margin-top: -16em;
 width:900px;
 height:400px;
 position:relative;
@@ -198,7 +229,7 @@ width:455px;
 }
 
 .wolken1{
-	margin-top: -30em;
+	margin-top: -35em;
 		z-index: -100;
 		opacity: 0.5;
 }
@@ -383,11 +414,11 @@ and (orientation : landscape) { /* STYLES GO HERE */
 		height: 12em;
 		/*background-color: blue;*/
 		margin-top: 16em;
-		margin-left: 15em;
+		margin-left: 3em;
 	}
 	#navContent{
 	margin:auto;
-	margin-top: -1em;
+	margin-top: -5em;
 	width:900px;
 	height:400px;
 	position:relative;
@@ -405,7 +436,28 @@ and (orientation : landscape) { /* STYLES GO HERE */
 	font-size:30px;
 	text-align: center;
 	margin: auto;
-	margin-top: 4em;
+	margin-top: 0em;
 	padding-bottom: 2em;
+	}
+	.overzicht{
+		width: 59em;
+		margin-top: -1em;
+		margin-left: 3em;
+	}
+	.overzichttekst{
+		font-family: 'Baloo', cursive;
+		color: #0D47A1;
+		font-size: 2em;
+		text-align: center;
+		margin-top: -8em;
+	}
+
+	.endbutton{
+		margin-top: 1em;
+		margin:auto;
+	}
+
+	.reload{
+		padding-right: 2em;
 	}
 }

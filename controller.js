@@ -26,46 +26,24 @@ getQuestion();
 function getQuestion(){
 
 	$(".niveau1").on("click", function () {
-    console.log('niveau1');
-    $(".keuzescherm").addClass("onzichtbaar");
-    $(".game").removeClass("onzichtbaar");
-		$.getJSON('activity1.json', function(data) {
-		for(i=0;i<data.quizlist.length;i++){
-			questionBank[i]=new Array;
-			questionBank[i][0]=data.quizlist[i].question;
-			questionBank[i][1]=data.quizlist[i].option1;
-			questionBank[i][2]=data.quizlist[i].option2;
-			questionBank[i][3]=data.quizlist[i].option3;
-      questionBank[i][4]=data.quizlist[i].audio;
-		}
-		 numberOfQuestions=questionBank.length;
+        console.log('niveau1');
+        $(".keuzescherm").addClass("onzichtbaar");
+        $(".game").removeClass("onzichtbaar");
+        		$.getJSON('activity1.json', function(data) {
+        		for(i=0;i<data.quizlist.length;i++){
+        			questionBank[i]=new Array;
+        			questionBank[i][0]=data.quizlist[i].question;
+        			questionBank[i][1]=data.quizlist[i].option1;
+        			questionBank[i][2]=data.quizlist[i].option2;
+        			questionBank[i][3]=data.quizlist[i].option3;
+              questionBank[i][4]=data.quizlist[i].audio;
+        		}
+        		 numberOfQuestions=questionBank.length;
+        		displayQuestion();
+        		})//gtjson
 
-
-		displayQuestion();
-		})//gtjson
-
-    $.getJSON('answer1.json', function(data) {
-      var antwoorden = [];
-      for(i=0;i<data.quizlist.length;i++){
-        console.log('answer1');
-      /*antwoorden[i]=new Array;
-      antwoorden[i][0]=data.quizlist[i].question;
-      antwoorden[i][1]=data.quizlist[i].option1;*/
-
-        antwoorden.push('<span>' + '<div class="overzicht"><img class="wolk" src="img/'data.quizlist.length[i]'"></div>'/*data.quizlist.length[i] */+ '</span>');
-
-    //  antwoorden.push('<span>' + data.quizlist.length[i] + '</span>');
-
-
-        console.log('test');
-      }
-      $(".overzicht").html(antwoorden.join(""));
-      console.log('test2');
-
-
-
- 		//displayAnswers();
-    })//gtjson
+              var overzicht = document.getElementsByClassName("overzicht");
+              overzicht[0].innerHTML = '<img src=\'img/auto.png\'><img src=\'img/cadeau.png\'><img src=\'img/gieter.png\'><img src=\'img/handdoek.png\'>';
 
 	})
 
@@ -89,6 +67,8 @@ function getQuestion(){
 		displayQuestion();
 		})//gtjson
 
+    var overzicht = document.getElementsByClassName("overzicht");
+    overzicht[0].innerHTML = '<img src=\'img/camera.png\'><img src=\'img/batterij.png\'><img src=\'img/helicopter.png\'><img src=\'img/cowboy.png\'>';
 	})
 
 //Vragenlijst niveau 3
@@ -111,6 +91,8 @@ function getQuestion(){
 		displayQuestion();
 		})//gtjson
 
+    var overzicht = document.getElementsByClassName("overzicht");
+    overzicht[0].innerHTML = '<img src=\'img/fruitschaal.png\'><img src=\'img/ananas.png\'><img src=\'img/helm.png\'><img src=\'img/koorts.png\'>';
 	})
 }
 
@@ -175,28 +157,17 @@ if(rnd==3){q3=questionBank[questionNumber][1];q1=questionBank[questionNumber][2]
 	 $(stage).animate({"right": "+=800px"},"slow", function() {questionLock=false;});
 	}//change question
 
-
-
-  //function displayAnswers(){
-   /*var rnd=Math.random()*3;
-  rnd=Math.ceil(rnd);*/
-  // var q1;
-
-  //{q1=antwoorden[1];}
-  //  if(rnd==2){q2=questionBank[questionNumber][1];q3=questionBank[questionNumber][2];q1=questionBank[questionNumber][3];q4=questionBank[questionNumber][4];}
-  //  if(rnd==3){q3=questionBank[questionNumber][1];q1=questionBank[questionNumber][2];q2=questionBank[questionNumber][3];q4=questionBank[questionNumber][4];}
-
-  // $(stage).append('<div  class="endText overzicht onzichtbaar">'+antwoorden[0]+'</div><div id="1" class="pix"><img class="wolk" src="img/'+q1+'"></div>');
-
-//  }
-
-
 	function displayFinalSlide(){
 
-		$(stage).append('<div class="endText">Gefeliciteerd je hebt het heel goed gedaan! <div class="overzicht"></div>  <FORM> <INPUT TYPE="button" class="reload" onClick="history.go(0)" VALUE="Menu"> </FORM> <FORM> <INPUT TYPE="button" class="choice" VALUE="Keuzescherm"> </FORM></div>')
+		$(stage).append('<div class="endText">Gefeliciteerd je hebt het heel goed gedaan!<div class="endbutton"><INPUT TYPE="image" class="reload" src="menu.png" onClick="history.go(0)" VALUE="Menu"> <INPUT TYPE="image" class="choice" src="keuze.png" VALUE="Keuzescherm"></div></div>')
 
-    $(".overzicht").removeClass("onzichtbaar");
-
+    setTimeout(function(){showOverzicht()},1000);
+    function showOverzicht(){
+        var tekst = document.getElementsByClassName("overzichttekst");
+        tekst[0].innerHTML = '<p>De juiste antwoorden</p>';
+        $(".overzichttekst").removeClass("onzichtbaar");
+        $(".overzicht").removeClass("onzichtbaar");
+    }
 
 
     $(".choice").on("click", function () {
@@ -210,6 +181,7 @@ if(rnd==3){q3=questionBank[questionNumber][1];q1=questionBank[questionNumber][2]
           var questionNumber=0;
           console.log('test');
           $(".keuzescherm").removeClass("onzichtbaar");
+          $(".overzicht").addClass("onzichtbaar");
           $(".game").addClass("onzichtbaar");
           $(".home").addClass("onzichtbaar");
   	})
