@@ -6,6 +6,28 @@ html, body {
 		overflow-x: hidden;
 	    }
 
+.schrijffont{
+	font-family: 'Handlee', cursive;
+}
+
+.font{
+	float: right;
+	margin-bottom: 1em;
+	margin-right: 2em;
+}
+
+.geluid{
+	float: right;
+	margin-bottom: 1em;
+	margin-right: 2em;
+}
+
+.Ngeluid{
+	float: right;
+	margin-bottom: 1em;
+	margin-right: 2em;
+}
+
 footer{
 	position: absolute;
   right: 0;bottom:0;left:0;
@@ -15,9 +37,11 @@ footer{
 	font-family: 'Baloo';
 	color: #0D47A1;
 	padding-left: 2em;
+	float:left;
+	margin-top: 3em;
 	}
 
-.Htekst{
+#Htekst{
 	font-family: 'Baloo', cursive;
 	color: #0D47A1;
 }
