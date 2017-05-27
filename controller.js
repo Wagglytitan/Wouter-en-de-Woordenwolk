@@ -37,22 +37,52 @@ function game(){
     var hasBeenClicked = false;
     jQuery('#geluid').click(function () {
       console.log('klikgeluid');
+      $("#geluid").attr("src","img/geluidN.png");
         hasBeenClicked = true;
-        //sound();
+        //soundN();
     });
 
-    sound();
-    function sound(){
+    jQuery('#start').click(function () {
+      if (hasBeenClicked == false) {
+          // The link has been clicked.
+          console.log('geluid');
+          getQuestion();
+          //soundN();
+      } else if (hasBeenClicked == true) {
+          // The link has not been clicked.
+          //hasBeenClicked = true;
+          soundN();
+          console.log("Ngeluid");
+      }
+    });
+
+    function soundN(){
         if (hasBeenClicked == true) {
             // The link has been clicked.
-            console.log('Ngeluid');
+            console.log('Ngeluid2');
             getQuestionNSound();
-        } else if(hasBeenClicked == false) {
+            //sound();
+        } else {
             // The link has not been clicked.
-            console.log("else");
-            getQuestion();
+            hasBeenClicked = false;
+            //sound();
+            console.log("geluid");
         }
    }
+
+  /*  function sound(){
+        if (hasBeenClicked == false) {
+            // The link has been clicked.
+            console.log('geluid');
+            getQuestion();
+            //soundN();
+        } else {
+            // The link has not been clicked.
+            hasBeenClicked = true;
+            //soundN();
+            console.log("soundNgeluid");
+        }
+   } */
 
     //sound();
 
