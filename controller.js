@@ -12,6 +12,7 @@ function game(){
       var niveau2 = document.getElementsByClassName("niveau2");
       //var juisteAntwoorden = [];
       var antwoorden=new Array();
+      var vid = document.getElementById("vid");
 
 
       var backmusic = document.querySelector('audio');
@@ -19,20 +20,30 @@ function game(){
 
       $(".go").on("click", function(){
         $(".home").addClass("onzichtbaar");
+        $(".geluid").addClass("onzichtbaar");
+        $(".font").addClass("onzichtbaar");
+        $(".footer").addClass("onzichtbaar");
         $(".keuzescherm").removeClass("onzichtbaar");
+        $(".homeB").removeClass("onzichtbaar");
       })
+
+      $(".uitleg").click(function(){
+        $(".video").removeClass("onzichtbaar");
+        backmusic.volume = 0.0;
+         //document.getElementById('vid')[0].play();
+        vid.play();
+        console.log('video');
+    });
+
+    vid.addEventListener('ended', function(){
+      backmusic.volume = 0.4;
+        $(".video").addClass("onzichtbaar");
+    });
 
       $(".font").click(function(){
     $("p").toggleClass("schrijffont");
     console.log('font change');
     });
-
-    /*$("#geluid").click(function(){
-      console.log('klikgeluid');
-      $(".audio").addClass("Ngeluid");
-      $(".audio").removeClass("geluid");
-      //sound();
-    }); */
 
     var hasBeenClicked = false;
     jQuery('#geluid').click(function () {
@@ -41,6 +52,41 @@ function game(){
         hasBeenClicked = true;
         //soundN();
     });
+    //game2();
+    /*function game2(){
+      console.log('game2');
+      if ($('#keuze').hasClass('click')){
+      //jQuery('.choice').click(function () {
+        console.log('game2start');
+        if (hasBeenClicked == false) {
+            // The link has been clicked.
+            console.log('geluid');
+            getQuestion();
+            //soundN();
+        } else if (hasBeenClicked == true) {
+            // The link has not been clicked.
+            //hasBeenClicked = true;
+            soundN();
+            console.log("Ngeluid");
+        }
+      }
+    //  });
+
+      function soundN(){
+          if (hasBeenClicked == true) {
+              // The link has been clicked.
+              console.log('Ngeluid2');
+              getQuestionNSound();
+              //sound();
+          } else {
+              // The link has not been clicked.
+              hasBeenClicked = false;
+              //sound();
+              console.log("geluid");
+          }
+     }
+} */
+
 
     jQuery('#start').click(function () {
       if (hasBeenClicked == false) {
@@ -70,43 +116,15 @@ function game(){
         }
    }
 
-  /*  function sound(){
-        if (hasBeenClicked == false) {
-            // The link has been clicked.
-            console.log('geluid');
-            getQuestion();
-            //soundN();
-        } else {
-            // The link has not been clicked.
-            hasBeenClicked = true;
-            //soundN();
-            console.log("soundNgeluid");
-        }
-   } */
-
-    //sound();
-
-  /*  function sound(){
-      console.log('sound');
-      //var spreken = document.getElementById("geluid");
-      if($('#geluid').hasClass('Ngeluid')){
-        console.log('Ngeluid');
-        getQuestionNSound();
-      }
-      else if($('#geluid').hasClass('geluid')){
-        console.log("else");
-        getQuestion();
-      }
-    } */
-
-      //getQuestion();
-
+//getQuestion();
+      //VRAGENLIJST MET GELUID
       //Vragenlijst niveau 1
       function getQuestion(){
       	$(".niveau1").on("click", function () {
               console.log('niveau1');
               $(".keuzescherm").addClass("onzichtbaar");
               $(".game").removeClass("onzichtbaar");
+              $(".homeBG").removeClass("onzichtbaar");
               		$.getJSON('activity1.json', function(data) {
               		for(i=0;i<data.quizlist.length;i++){
               			questionBank[i]=new Array;
@@ -130,6 +148,7 @@ function game(){
           console.log('niveau2');
           $(".keuzescherm").addClass("onzichtbaar");
           $(".game").removeClass("onzichtbaar");
+          $(".homeBG").removeClass("onzichtbaar");
       		$.getJSON('activity2.json', function(data) {
       		for(i=0;i<data.quizlist.length;i++){
       			questionBank[i]=new Array;
@@ -154,6 +173,7 @@ function game(){
           console.log('niveau2');
           $(".keuzescherm").addClass("onzichtbaar");
           $(".game").removeClass("onzichtbaar");
+          $(".homeBG").removeClass("onzichtbaar");
       		$.getJSON('activity3.json', function(data) {
       		for(i=0;i<data.quizlist.length;i++){
       			questionBank[i]=new Array;
@@ -174,12 +194,14 @@ function game(){
       	})
       }
 
-//zonder audio
+
+//VRAGENLIJST ZONDER GELUID
       function getQuestionNSound(){
       	$(".niveau1").on("click", function () {
               console.log('niveau1');
               $(".keuzescherm").addClass("onzichtbaar");
               $(".game").removeClass("onzichtbaar");
+              $(".homeBG").removeClass("onzichtbaar");
               		$.getJSON('activity1.json', function(data) {
               		for(i=0;i<data.quizlist.length;i++){
               			questionBank[i]=new Array;
@@ -203,6 +225,7 @@ function game(){
           console.log('niveau2');
           $(".keuzescherm").addClass("onzichtbaar");
           $(".game").removeClass("onzichtbaar");
+          $(".homeBG").removeClass("onzichtbaar");
       		$.getJSON('activity2.json', function(data) {
       		for(i=0;i<data.quizlist.length;i++){
       			questionBank[i]=new Array;
@@ -227,6 +250,7 @@ function game(){
           console.log('niveau2');
           $(".keuzescherm").addClass("onzichtbaar");
           $(".game").removeClass("onzichtbaar");
+          $(".homeBG").removeClass("onzichtbaar");
       		$.getJSON('activity3.json', function(data) {
       		for(i=0;i<data.quizlist.length;i++){
       			questionBank[i]=new Array;
@@ -310,7 +334,9 @@ function game(){
 
       	function displayFinalSlide(){
 
-      		$(stage).append('<div class="endText"><p>Gefeliciteerd je hebt het heel goed gedaan!</p><div class="endbutton"><INPUT TYPE="image" class="reload" src="menu.png" onClick="history.go(0)" VALUE="Menu"> <INPUT TYPE="image" class="choice" src="keuze.png" VALUE="Keuzescherm"></div></div>')
+      		$(stage).append('<div class="endText"><p>Gefeliciteerd je hebt het heel goed gedaan!<br>Klik hieronder om terug te keren.</p><div class="endbutton"><INPUT TYPE="image" class="reload" src="menu.png" onClick="history.go(0)" VALUE="Menu"> </div></div>')
+          //<INPUT TYPE="image" id="keuze" class="choice" src="keuze.png" VALUE="Keuzescherm">
+          $(".homeBG").addClass("onzichtbaar");
 
           setTimeout(function(){showOverzicht()},1000);
           function showOverzicht(){
@@ -321,7 +347,7 @@ function game(){
           }
 
 
-          $(".choice").on("click", function () {
+          /*$(".choice").on("click", function () {
             //location.reload();
             //window.localStorage.clear();
                 console.log('choice');
@@ -331,14 +357,46 @@ function game(){
                 //document.getElementById("navContent").reset();
                 var questionNumber=0;
                 console.log('test');
+                $(".choice").addClass("click");
                 $(".keuzescherm").removeClass("onzichtbaar");
                 $(".overzicht").addClass("onzichtbaar");
                 $(".overzichttekst").addClass("onzichtbaar");
                 $(".game").addClass("onzichtbaar");
                 $(".home").addClass("onzichtbaar");
 
+                /*
+                  if (hasBeenClicked == false) {
+                      // The link has been clicked.
+                      console.log('geluid');
+                      getQuestion();
+                      //soundN();
+                  } else if (hasBeenClicked == true) {
+                      // The link has not been clicked.
+                      //hasBeenClicked = true;
+                      soundN();
+                      console.log("Ngeluid");
+                  }
+
+
+                function soundN(){
+                    if (hasBeenClicked == true) {
+                        // The link has been clicked.
+                        console.log('Ngeluid2');
+                        getQuestionNSound();
+                        //sound();
+                    } else {
+                        // The link has not been clicked.
+                        hasBeenClicked = false;
+                        //sound();
+                        console.log("geluid");
+                    }
+               }
+
+
                 game();
-        	})
+                game2();
+                console.log('game');
+        	})*/
 
       	}//display final slide
   }//game function

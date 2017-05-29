@@ -6,8 +6,17 @@ html, body {
 		overflow-x: hidden;
 	    }
 
+.video{
+	position: fixed; right: 0; bottom: 0;
+	min-width: 100%; min-height: 100%;
+	width: auto; height: auto;
+	background-size: cover;
+	z-index: 100;
+}
+
 .schrijffont{
-	font-family: 'Handlee', cursive;
+	font-family: 'Dekko', cursive;
+	/*font-family: 'Handlee', cursive;*/
 }
 
 .font{
@@ -19,6 +28,18 @@ html, body {
 .geluid{
 	float: right;
 	margin-bottom: 1em;
+	margin-right: 2em;
+}
+
+.homeB{
+	float: right;
+	margin-top: 22em;
+	margin-right: 2em;
+}
+
+.homeBG{
+	float: right;
+	margin-top: 25em;
 	margin-right: 2em;
 }
 
@@ -255,7 +276,7 @@ width:455px;
 
 .homescreen{
 	position: relative;
-	z-index: 100;
+	z-index: 90;
 	margin-top: 5em;
 	height: 72%;
 }
