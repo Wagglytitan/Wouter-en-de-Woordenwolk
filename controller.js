@@ -299,7 +299,7 @@ function game(){
          $('#img1').attr('src','woutergroen.png');
          var back = document.querySelector('audio');
          back.volume = 0.2;
-         var audio = new Audio('music/goed.mp3');
+         var audio = new Audio('music/goedgoed.mp3');
          audio.play();
          setTimeout(function(){changeQuestion()},1000);
          }
@@ -316,7 +316,7 @@ function game(){
       }//display question
 
       	function changeQuestion(){
-          $('#img1').attr('src','wouter.png');
+          $('#img1').attr('src','wouterblauw.png');
           var back = document.querySelector('audio');
           back.volume = 0.4;
 
