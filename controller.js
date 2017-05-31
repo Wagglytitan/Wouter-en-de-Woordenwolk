@@ -17,6 +17,123 @@ function game(){
 
       var backmusic = document.querySelector('audio');
       backmusic.volume = 0.4;
+      //STARS function
+      particlesJS();
+
+      particlesJS("particles-js", {
+        "particles": {
+          "number": {
+            "value": 90,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#ffffff"
+          },
+          "shape": {
+            "type": "star",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": {
+              "nb_sides": 5
+            },
+            "image": {
+              "src": "img/github.svg",
+              "width": 100,
+              "height": 100
+            }
+          },
+          "opacity": {
+            "value": 0.24463576890600452,
+            "random": true,
+            "anim": {
+              "enable": true,
+              "speed": 1,
+              "opacity_min": 0,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 3,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 4,
+              "size_min": 0.3,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": false,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 1,
+            "direction": "none",
+            "random": true,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 600
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": false,
+              "mode": "bubble"
+            },
+            "onclick": {
+              "enable": false,
+              "mode": "repulse"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 400,
+              "line_linked": {
+                "opacity": 1
+              }
+            },
+            "bubble": {
+              "distance": 250,
+              "size": 0,
+              "duration": 2,
+              "opacity": 0,
+              "speed": 3
+            },
+            "repulse": {
+              "distance": 400,
+              "duration": 0.4
+            },
+            "push": {
+              "particles_nb": 4
+            },
+            "remove": {
+              "particles_nb": 2
+            }
+          }
+        },
+        "retina_detect": true
+      });
+
+
+
+      //END STARS function
 
       $(".go").on("click", function(){
         $(".home").addClass("onzichtbaar");
@@ -40,53 +157,45 @@ function game(){
         $(".video").addClass("onzichtbaar");
     });
 
+      var fontClicked = false;
+      var previousFont=null;
+
       $(".font").click(function(){
     $("p").toggleClass("schrijffont");
+    fontClicked = true;
     console.log('font change');
+    if(this===previousFont) {
+      //$("p").toggleClass("schrijffont");
+      fontClicked = false;
+      console.log("fontClicked");
+        //alert("You've clicked this element twice.");
+    }
+    previousFont=this;
+    return false;
     });
 
     var hasBeenClicked = false;
+    var previousTarget=null;
     jQuery('#geluid').click(function () {
       console.log('klikgeluid');
       $("#geluid").attr("src","img/geluidN.png");
+      $(".wolken1").addClass("onzichtbaar");
+      var sterren = document.getElementById('particles-js');
+      sterren.style.opacity = "0.9";
+      $("body").toggleClass("body2");
+      $("p").toggleClass("sterrentekst");
+      var sterre = document.getElementsByClassName("wendyH");
+      sterre[0].innerHTML = '<img class="swingimage" src=\'sterre.png\'>';
+      var audiow = new Audio('music/samen.mp3');
+      audiow.play();
         hasBeenClicked = true;
-        //soundN();
-    });
-    //game2();
-    /*function game2(){
-      console.log('game2');
-      if ($('#keuze').hasClass('click')){
-      //jQuery('.choice').click(function () {
-        console.log('game2start');
-        if (hasBeenClicked == false) {
-            // The link has been clicked.
-            console.log('geluid');
-            getQuestion();
-            //soundN();
-        } else if (hasBeenClicked == true) {
-            // The link has not been clicked.
-            //hasBeenClicked = true;
-            soundN();
-            console.log("Ngeluid");
+        if(this===previousTarget) {
+          location.reload();
+            //alert("You've clicked this element twice.");
         }
-      }
-    //  });
-
-      function soundN(){
-          if (hasBeenClicked == true) {
-              // The link has been clicked.
-              console.log('Ngeluid2');
-              getQuestionNSound();
-              //sound();
-          } else {
-              // The link has not been clicked.
-              hasBeenClicked = false;
-              //sound();
-              console.log("geluid");
-          }
-     }
-} */
-
+        previousTarget=this;
+        return false;
+    });
 
     jQuery('#start').click(function () {
       if (hasBeenClicked == false) {
@@ -99,6 +208,9 @@ function game(){
           //hasBeenClicked = true;
           soundN();
           console.log("Ngeluid");
+
+          var wendy = document.getElementsByClassName("wendyK");
+          wendy[0].innerHTML = '<img class="swingimage" src=\'wendy.png\'>';
       }
     });
 
@@ -116,7 +228,6 @@ function game(){
         }
    }
 
-//getQuestion();
       //VRAGENLIJST MET GELUID
       //Vragenlijst niveau 1
       function getQuestion(){
@@ -139,7 +250,7 @@ function game(){
               		})//gtjson
 
                     var overzicht = document.getElementsByClassName("overzicht");
-                    overzicht[0].innerHTML = '<img src=\'img/auto.png\'><img src=\'img/cadeau.png\'><img src=\'img/gieter.png\'><img src=\'img/handdoek.png\'>';
+                    overzicht[0].innerHTML = '<img src=\'img/auto.png\'><img src=\'img/cadeau.png\'><img src=\'img/gieter.png\'><img src=\'img/ijsje.png\'>';
 
       	})
 
@@ -215,8 +326,11 @@ function game(){
               		displayQuestion();
               		})//gtjson
 
+                  var wendy = document.getElementsByClassName("wendy");
+                  wendy[0].innerHTML = '<img class="swingimage" id="img2" src=\'wendy.png\'>';
+
                     var overzicht = document.getElementsByClassName("overzicht");
-                    overzicht[0].innerHTML = '<img src=\'img/auto.png\'><img src=\'img/cadeau.png\'><img src=\'img/gieter.png\'><img src=\'img/handdoek.png\'>';
+                    overzicht[0].innerHTML = '<img src=\'img/auto.png\'><img src=\'img/cadeau.png\'><img src=\'img/gieter.png\'><img src=\'img/ijsje.png\'>';
 
       	})
 
@@ -240,6 +354,9 @@ function game(){
 
       		displayQuestion();
       		})//gtjson
+
+          var wendy = document.getElementsByClassName("wendy");
+          wendy[0].innerHTML = '<img class="swingimage" id="img2" src=\'wendy.png\'>';
 
           var overzicht = document.getElementsByClassName("overzicht");
           overzicht[0].innerHTML = '<img src=\'img/camera.png\'><img src=\'img/batterij.png\'><img src=\'img/helicopter.png\'><img src=\'img/cowboy.png\'>';
@@ -266,6 +383,9 @@ function game(){
       		displayQuestion();
       		})//gtjson
 
+          var wendy = document.getElementsByClassName("wendy");
+          wendy[0].innerHTML = '<img class="swingimage" id="img2" src=\'wendy.png\'>';
+
           var overzicht = document.getElementsByClassName("overzicht");
           overzicht[0].innerHTML = '<img src=\'img/fruitschaal.png\'><img src=\'img/ananas.png\'><img src=\'img/helm.png\'><img src=\'img/koorts.png\'>';
       	})
@@ -287,16 +407,33 @@ function game(){
 
        $(stage).append('<div  class="questionText"><p>'+questionBank[questionNumber][0]+'</p></div><div id="1" class="pix"><img class="wolk" src="img/'+q1+'"></div><div id="2" class="pix"><img class="wolk" src="img/'+q2+'"></div><div id="3" class="pix"><img class="wolk" src="img/'+q3+'"></div><div id="4" class="onzichtbaar pix"><audio controls autoplay><source src="music/Nwoorden/'+q4+'" type="audio/mp3"></audio></div>');
 
+       if (hasBeenClicked == false) {
+
+           console.log('gewoon font');
+           //soundN();
+       } else if (hasBeenClicked == true) {
+
+           $("p").addClass("sterrentekst");
+           console.log("wit font");
+
+       }
+
+       if (fontClicked == false) {
+
+           console.log('gewoon font');
+           //soundN();
+       } else if (fontClicked == true) {
+
+           $("p").addClass("schrijffont");
+           console.log("schrijffont");
+
+       }
+
        $('.pix').click(function(){
         //correct answer
         if(this.id==rnd){
-
-        /*  $(this.id).addClass('juist');
-          juisteAntwoorden.push('.juist');
-
-          console.log($(this.id).innerhtml); */
-
          $('#img1').attr('src','woutergroen.png');
+         $('#img2').attr('src','WendyJ.png');
          var back = document.querySelector('audio');
          back.volume = 0.2;
          var audio = new Audio('music/goedgoed.mp3');
@@ -306,6 +443,7 @@ function game(){
         //wrong answer
         if(this.id!=rnd){
          $('#img1').attr('src','wouteroranje.png');
+         $('#img2').attr('src','WendyF.png');
          var back = document.querySelector('audio');
          back.volume = 0.2;
          var audio = new Audio('music/fout.mp3');
@@ -317,6 +455,7 @@ function game(){
 
       	function changeQuestion(){
           $('#img1').attr('src','wouterblauw.png');
+          $('#img2').attr('src','Wendy.png');
           var back = document.querySelector('audio');
           back.volume = 0.4;
 
@@ -338,12 +477,56 @@ function game(){
           //<INPUT TYPE="image" id="keuze" class="choice" src="keuze.png" VALUE="Keuzescherm">
           $(".homeBG").addClass("onzichtbaar");
 
+          if (hasBeenClicked == false) {
+
+              console.log('gewoon font');
+              //soundN();
+          } else if (hasBeenClicked == true) {
+
+              $("p").addClass("sterrentekst");
+              console.log("wit eind font");
+
+          }
+
+          if (fontClicked == false) {
+
+              console.log('gewoon font');
+              //soundN();
+          } else if (fontClicked == true) {
+
+              $("p").addClass("schrijffont");
+              console.log("schrijffont");
+
+          }
+
           setTimeout(function(){showOverzicht()},1000);
           function showOverzicht(){
               var tekst = document.getElementsByClassName("overzichttekst");
               tekst[0].innerHTML = '<p>De juiste antwoorden</p>';
               $(".overzichttekst").removeClass("onzichtbaar");
               $(".overzicht").removeClass("onzichtbaar");
+
+              if (hasBeenClicked == false) {
+
+                  console.log('gewoon font');
+                  //soundN();
+              } else if (hasBeenClicked == true) {
+
+                  $("p").addClass("sterrentekst");
+                  console.log("wit eind font");
+
+              }
+
+              if (fontClicked == false) {
+
+                  console.log('gewoon font');
+                  //soundN();
+              } else if (fontClicked == true) {
+
+                  $("p").addClass("schrijffont");
+                  console.log("schrijffont");
+
+              }
           }
 
 

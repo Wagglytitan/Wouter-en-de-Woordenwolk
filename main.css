@@ -1,10 +1,32 @@
 html, body {
 	margin: 0;
 	padding: 0;
-  background-color: #B3E5FC;
 	  font-family: Arial, Helvetica, sans-serif;
 		overflow-x: hidden;
 	    }
+
+p {
+	font-family: 'Baloo', cursive;
+	color: #0D47A1;
+	font-size:30px;
+}
+
+/*STARS*/
+#particles-js {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ opacity: 0;
+ /*z-index: 90; */
+}
+
+.body1{
+	background-color: #B3E5FC;
+}
+
+.body2{
+	background-color: #234575;
+}
 
 .video{
 	position: fixed; right: 0; bottom: 0;
@@ -33,20 +55,30 @@ html, body {
 
 .homeB{
 	float: right;
-	margin-top: 22em;
+	margin-top: 20em;
 	margin-right: 2em;
 }
 
 .homeBG{
 	float: right;
-	margin-top: 25em;
+	margin-top: 23em;
 	margin-right: 2em;
 }
 
+.sterrentekst{
+	color: white;
+}
 
-footer{
+footer {
 	position: absolute;
   right: 0;bottom:0;left:0;
+	font-size:15px;
+}
+
+footer p{
+	position: absolute;
+  right: 0;bottom:0;left:0;
+	font-size:15px;
 }
 
 #bottombar{
@@ -60,6 +92,7 @@ footer{
 #Htekst{
 	font-family: 'Baloo', cursive;
 	color: #0D47A1;
+	font-size: 2em;
 }
 
 .overzichttekst{
@@ -67,7 +100,7 @@ footer{
 	color: #0D47A1;
 	font-size: 2em;
 	text-align: center;
-	margin-top: -15em;
+	margin-top: -11em;
 }
 
 .endbutton{
@@ -88,6 +121,14 @@ footer{
 	margin-left: 30em;
 }
 
+.wendyH{
+	width: 3em;
+	height: 6em;
+	/*background-color: blue;*/
+	margin-top: -5em;
+	margin-left: 20em;
+}
+
 .wouterK{
 	width: 6em;
 	height: 12em;
@@ -96,12 +137,28 @@ footer{
 	margin-left: 30em;
 }
 
+.wendyK{
+	width: 3em;
+	height: 6em;
+	/*background-color: blue;*/
+	margin-top: -5em;
+	margin-left: 20em;
+}
+
 .wouter{
 	width: 6em;
 	height: 12em;
 	/*background-color: blue;*/
 	margin-top: 23em;
 	margin-left: 15em;
+}
+
+.wendy{
+	width: 3em;
+	height: 6em;
+	/*background-color: blue;*/
+	margin-top: -4em;
+	margin-left: 10em;
 }
 
 .content{
@@ -162,18 +219,18 @@ position:absolute;
 }
 
 .questionText{
-font-family: 'Baloo', cursive;
+/*font-family: 'Baloo', cursive;
 color: #0D47A1;
-font-size:30px;
+font-size:30px; */
 text-align: center;
 margin: auto;
 padding-bottom: 2em;
 }
 
 .endText{
-font-family: 'Baloo', cursive;
+/*font-family: 'Baloo', cursive;
 color: #0D47A1;
-font-size:30px;
+font-size:30px;*/
 text-align: center;
 margin: auto;
 padding-bottom: 2em;
@@ -427,6 +484,13 @@ and (orientation : landscape) { /* STYLES GO HERE */
 		margin-top: 17em;
 		margin-left: 5em;
 	}
+	.wendyH{
+		width: 3em;
+		height: 6em;
+		/*background-color: blue;*/
+		margin-top: -5em;
+		margin-left: 53em;
+	}
 	.Htekst{
 		font-family: 'Baloo', cursive;
 		color: #0D47A1;
@@ -444,6 +508,13 @@ and (orientation : landscape) { /* STYLES GO HERE */
 		margin-top: 5em;
 		margin-left: 5em;
 	}
+	.wendyK{
+		width: 3em;
+		height: 6em;
+		/*background-color: blue;*/
+		margin-top: -5em;
+		margin-left: 13em;
+	}
 	.buttons{
 		width: 5em;
 		margin-top: -12em;
@@ -456,9 +527,27 @@ and (orientation : landscape) { /* STYLES GO HERE */
 		margin-top: 16em;
 		margin-left: 3em;
 	}
+	.wendy{
+		width: 3em;
+		height: 6em;
+		/*background-color: blue;*/
+		margin-top: -4em;
+		margin-left: 54em;
+	}
+	.homeB{
+		float: right;
+		margin-top: 12em;
+		margin-right: 2em;
+	}
+
+	.homeBG{
+		float: right;
+		margin-top: 11em;
+		margin-right: 2em;
+	}
 	#navContent{
 	margin:auto;
-	margin-top: -5em;
+	margin-top: -11em;
 	width:900px;
 	height:400px;
 	position:relative;
@@ -489,7 +578,7 @@ and (orientation : landscape) { /* STYLES GO HERE */
 		color: #0D47A1;
 		font-size: 2em;
 		text-align: center;
-		margin-top: -8em;
+		margin-top: -7em;
 	}
 
 	.endbutton{

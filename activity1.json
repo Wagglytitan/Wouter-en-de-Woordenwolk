@@ -22,10 +22,10 @@
 	"audio":"gieter.mp3"
   },
 	{
-	"question":"HANDDOEK",
-	"option1":"handdoek.png",
-	"option2":"slippers.png",
-	"option3":"producten.png",
+	"question":"IJSJE",
+	"option1":"ijsje.png",
+	"option2":"koeka.png",
+	"option3":"taart.png",
 	"audio":"handdoek.mp3"
   }
 
