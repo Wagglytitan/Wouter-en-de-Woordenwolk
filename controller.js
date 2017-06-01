@@ -177,7 +177,7 @@ function game(){
 
     var uitlegClicked = false;
     var previousUitleg=null;
-    var uitleg0 = new Audio('music/uitleg00.mp3');
+    var uitleg0 = new Audio('music/uitleg0.mp3');
     jQuery('#uitleg').click(function(){
       uitleg0.play();
       $("#geluid").attr("src","img/uitlegG.png");
@@ -194,7 +194,7 @@ function game(){
           var back = document.querySelector('audio');
           back.volume = 0.4;
        });
-       var uitleg2 = new Audio('music/uitleg02.mp3');
+       var uitleg2 = new Audio('music/uitleg2.mp3');
        $(".uitleg2").on("mouseover", function () {
             var back = document.querySelector('audio');
             back.volume = 0.2;
