@@ -11,6 +11,10 @@ p {
 	font-size:30px;
 }
 
+.keuzeT{
+
+}
+
 .algemeen{
 	width: 100%;
 	height: 100%;
@@ -594,6 +598,127 @@ and (orientation : landscape) { /* STYLES GO HERE */
 		width: 59em;
 		margin-top: -1em;
 		margin-left: 3em;
+	}
+	.overzichttekst{
+		font-family: 'Baloo', cursive;
+		color: #0D47A1;
+		font-size: 2em;
+		text-align: center;
+		margin-top: -7em;
+	}
+
+	.endbutton{
+		margin-top: 1em;
+		margin:auto;
+	}
+
+	.reload{
+		padding-right: 2em;
+	}
+}
+
+@media only screen
+and (min-device-width : 756px)
+and (max-device-width : 1440px)
+and (orientation : landscape) { /* STYLES GO HERE */
+	.wouterH{
+		width: 6em;
+		height: 12em;
+		/*background-color: blue;*/
+		margin-top: 17em;
+		margin-left: 21em;
+	}
+	.sterreH{
+		width: 3em;
+		height: 6em;
+		/*background-color: blue;*/
+		margin-top: -5em;
+		margin-left: 13em;
+	}
+	.Htekst{
+		font-family: 'Baloo', cursive;
+		color: #0D47A1;
+		margin-top: -7em;
+	}
+	.wolken1{
+		margin-top: -34em;
+			z-index: -100;
+			opacity: 0.5;
+	}
+	.wouterK{
+		width: 6em;
+		height: 12em;
+		/*background-color: blue;*/
+		margin-top: 5em;
+		margin-left: 27em;
+	}
+	.sterreK{
+		width: 3em;
+		height: 6em;
+		/*background-color: blue;*/
+		margin-top: -5em;
+		margin-left: 24em;
+	}
+	.buttons{
+		width: 5em;
+		margin-top: -19em;
+		margin-left: 42em;
+	}
+	.keuzeT{
+		margin-top: 5em;
+	}
+	.wouter{
+		width: 6em;
+		height: 12em;
+		/*background-color: blue;*/
+		margin-top: 16em;
+		margin-left: 9em;
+	}
+	.sterre{
+		width: 3em;
+		height: 6em;
+		/*background-color: blue;*/
+		margin-top: -4em;
+		margin-left: 4em;
+	}
+	.homeB{
+		float: right;
+		margin-top: 12em;
+		margin-right: 2em;
+	}
+
+	.homeBG{
+		float: right;
+		margin-top: 11em;
+		margin-right: 2em;
+	}
+	#navContent{
+	margin:auto;
+	margin-top: -11em;
+	width:900px;
+	height:400px;
+	position:relative;
+	overflow:hidden;
+	}
+	.homescreen{
+		position: relative;
+		z-index: 100;
+		margin-top: -7em;
+		height: 72%;
+	}
+	.endText{
+	font-family: 'Baloo', cursive;
+	color: #0D47A1;
+	font-size:30px;
+	text-align: center;
+	margin: auto;
+	margin-top: 0em;
+	padding-bottom: 2em;
+	}
+	.overzicht{
+		width: 59em;
+		margin-top: -1em;
+		margin-left: 17em;
 	}
 	.overzichttekst{
 		font-family: 'Baloo', cursive;
