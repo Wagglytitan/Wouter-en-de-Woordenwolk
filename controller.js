@@ -131,8 +131,6 @@ function game(){
         "retina_detect": true
       });
 
-
-
       //END STARS function
 
       $(".go").on("click", function(){
@@ -174,6 +172,53 @@ function game(){
     return false;
     });
 
+    //var uitleg1 = document.getElementById("uitleg01");
+    //var uitleg1 = new Audio('music/uitleg01.mp3');
+
+    var uitlegClicked = false;
+    var previousUitleg=null;
+    var uitleg0 = new Audio('music/uitleg00.mp3');
+    jQuery('#uitleg').click(function(){
+      uitleg0.play();
+      $("#geluid").attr("src","img/uitlegG.png");
+      $("#letter").attr("src","img/uitlegF.png");
+      $(".font").addClass("uitleg1");
+      $(".audio").addClass("uitleg2");
+      var uitleg1 = new Audio('music/uitleg01.mp3');
+      $(".uitleg1").on("mouseover", function () {
+          var back = document.querySelector('audio');
+          back.volume = 0.2;
+     	    uitleg1.play();
+       });
+     	$(".uitleg1").on("mouseout", function () {
+          var back = document.querySelector('audio');
+          back.volume = 0.4;
+       });
+       var uitleg2 = new Audio('music/uitleg02.mp3');
+       $(".uitleg2").on("mouseover", function () {
+            var back = document.querySelector('audio');
+            back.volume = 0.2;
+      	    uitleg2.play();
+        });
+      	$(".uitleg2").on("mouseout", function () {
+           var back = document.querySelector('audio');
+           back.volume = 0.4;
+        });
+      uitlegClicked = true
+      if(this===previousUitleg) {
+        location.reload();
+        //uitleg0.src = "";
+        /*$("#geluid").attr("src","img/geluid.png");
+        $("#letter").attr("src","img/font.png");
+        $(".font").removeClass("uitleg1");
+        $(".audio").removeClass("uitleg2");*/
+          //alert("You've clicked this element twice.");
+      }
+      previousUitleg=this;
+      return false;
+
+    });
+
     var hasBeenClicked = false;
     var previousTarget=null;
     jQuery('#geluid').click(function () {
@@ -184,7 +229,7 @@ function game(){
       sterren.style.opacity = "0.9";
       $("body").toggleClass("body2");
       $("p").toggleClass("sterrentekst");
-      var sterre = document.getElementsByClassName("wendyH");
+      var sterre = document.getElementsByClassName("sterreH");
       sterre[0].innerHTML = '<img class="swingimage" src=\'sterre.png\'>';
       var audiow = new Audio('music/samen.mp3');
       audiow.play();
@@ -209,8 +254,8 @@ function game(){
           soundN();
           console.log("Ngeluid");
 
-          var wendy = document.getElementsByClassName("wendyK");
-          wendy[0].innerHTML = '<img class="swingimage" src=\'wendy.png\'>';
+          var sterre = document.getElementsByClassName("sterreK");
+          sterre[0].innerHTML = '<img class="swingimage" src=\'sterre.png\'>';
       }
     });
 
@@ -326,8 +371,8 @@ function game(){
               		displayQuestion();
               		})//gtjson
 
-                  var wendy = document.getElementsByClassName("wendy");
-                  wendy[0].innerHTML = '<img class="swingimage" id="img2" src=\'wendy.png\'>';
+                  var sterre = document.getElementsByClassName("sterre");
+                  sterre[0].innerHTML = '<img class="swingimage" id="img2" src=\'sterre.png\'>';
 
                     var overzicht = document.getElementsByClassName("overzicht");
                     overzicht[0].innerHTML = '<img src=\'img/auto.png\'><img src=\'img/cadeau.png\'><img src=\'img/gieter.png\'><img src=\'img/ijsje.png\'>';
@@ -355,8 +400,8 @@ function game(){
       		displayQuestion();
       		})//gtjson
 
-          var wendy = document.getElementsByClassName("wendy");
-          wendy[0].innerHTML = '<img class="swingimage" id="img2" src=\'wendy.png\'>';
+          var sterre = document.getElementsByClassName("sterre");
+          sterre[0].innerHTML = '<img class="swingimage" id="img2" src=\'sterre.png\'>';
 
           var overzicht = document.getElementsByClassName("overzicht");
           overzicht[0].innerHTML = '<img src=\'img/camera.png\'><img src=\'img/batterij.png\'><img src=\'img/helicopter.png\'><img src=\'img/cowboy.png\'>';
@@ -383,8 +428,8 @@ function game(){
       		displayQuestion();
       		})//gtjson
 
-          var wendy = document.getElementsByClassName("wendy");
-          wendy[0].innerHTML = '<img class="swingimage" id="img2" src=\'wendy.png\'>';
+          var sterre = document.getElementsByClassName("sterre");
+          sterre[0].innerHTML = '<img class="swingimage" id="img2" src=\'sterre.png\'>';
 
           var overzicht = document.getElementsByClassName("overzicht");
           overzicht[0].innerHTML = '<img src=\'img/fruitschaal.png\'><img src=\'img/ananas.png\'><img src=\'img/helm.png\'><img src=\'img/koorts.png\'>';
@@ -433,7 +478,7 @@ function game(){
         //correct answer
         if(this.id==rnd){
          $('#img1').attr('src','woutergroen.png');
-         $('#img2').attr('src','WendyJ.png');
+         $('#img2').attr('src','sterreJ.png');
          var back = document.querySelector('audio');
          back.volume = 0.2;
          var audio = new Audio('music/goedgoed.mp3');
@@ -443,7 +488,7 @@ function game(){
         //wrong answer
         if(this.id!=rnd){
          $('#img1').attr('src','wouteroranje.png');
-         $('#img2').attr('src','WendyF.png');
+         $('#img2').attr('src','sterreF.png');
          var back = document.querySelector('audio');
          back.volume = 0.2;
          var audio = new Audio('music/fout.mp3');
@@ -455,7 +500,7 @@ function game(){
 
       	function changeQuestion(){
           $('#img1').attr('src','wouterblauw.png');
-          $('#img2').attr('src','Wendy.png');
+          $('#img2').attr('src','sterre.png');
           var back = document.querySelector('audio');
           back.volume = 0.4;
 
