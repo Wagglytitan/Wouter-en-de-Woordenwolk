@@ -22,10 +22,10 @@
 	"audio":"helm.mp3"
   },
 	{
-	"question":"KOORTS",
-	"option1":"koorts.png",
-	"option2":"verkouden.png",
-	"option3":"hoest.png",
+	"question":"GOUDVIS",
+	"option1":"goudvis.png",
+	"option2":"vis.png",
+	"option3":"krab.png",
 	"audio":"koorts.mp3"
   }
 ]

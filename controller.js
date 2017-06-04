@@ -346,7 +346,7 @@ function game(){
       		})//gtjson
 
           var overzicht = document.getElementsByClassName("overzicht");
-          overzicht[0].innerHTML = '<img src=\'img/fruitschaal.png\'><img src=\'img/ananas.png\'><img src=\'img/helm.png\'><img src=\'img/koorts.png\'>';
+          overzicht[0].innerHTML = '<img src=\'img/fruitschaal.png\'><img src=\'img/ananas.png\'><img src=\'img/helm.png\'><img src=\'img/goudvis.png\'>';
       	})
       }
 
@@ -432,7 +432,7 @@ function game(){
           sterre[0].innerHTML = '<img class="swingimage" id="img2" src=\'sterre.png\'>';
 
           var overzicht = document.getElementsByClassName("overzicht");
-          overzicht[0].innerHTML = '<img src=\'img/fruitschaal.png\'><img src=\'img/ananas.png\'><img src=\'img/helm.png\'><img src=\'img/koorts.png\'>';
+          overzicht[0].innerHTML = '<img src=\'img/fruitschaal.png\'><img src=\'img/ananas.png\'><img src=\'img/helm.png\'><img src=\'img/goudvis.png\'>';
       	})
       }
 
