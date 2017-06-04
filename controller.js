@@ -182,28 +182,20 @@ function game(){
       uitleg0.play();
       $("#geluid").attr("src","img/uitlegG.png");
       $("#letter").attr("src","img/uitlegF.png");
-      $(".font").addClass("uitleg1");
-      $(".audio").addClass("uitleg2");
+      $("#letter").addClass("uitleg1");
+      $("#geluid").addClass("uitleg2");
+      $('.font').off('click');
+      $('.audio').off('click');
+      var back = document.querySelector('audio');
+      back.volume = 0.0;
       var uitleg1 = new Audio('music/uitleg01.mp3');
-      $(".uitleg1").on("mouseover", function () {
-          var back = document.querySelector('audio');
-          back.volume = 0.2;
-     	    uitleg1.play();
-       });
-     	$(".uitleg1").on("mouseout", function () {
-          var back = document.querySelector('audio');
-          back.volume = 0.4;
-       });
+      $(".uitleg1").click(function(){
+        uitleg1.play();
+      });
        var uitleg2 = new Audio('music/uitleg2.mp3');
-       $(".uitleg2").on("mouseover", function () {
-            var back = document.querySelector('audio');
-            back.volume = 0.2;
-      	    uitleg2.play();
-        });
-      	$(".uitleg2").on("mouseout", function () {
-           var back = document.querySelector('audio');
-           back.volume = 0.4;
-        });
+       $(".uitleg2").click(function(){
+         uitleg2.play();
+       });
       uitlegClicked = true
       if(this===previousUitleg) {
         location.reload();
@@ -221,7 +213,7 @@ function game(){
 
     var hasBeenClicked = false;
     var previousTarget=null;
-    jQuery('#geluid').click(function () {
+    jQuery('.audio').click(function () {
       console.log('klikgeluid');
       $("#geluid").attr("src","img/geluidN.png");
       $(".wolken1").addClass("onzichtbaar");
