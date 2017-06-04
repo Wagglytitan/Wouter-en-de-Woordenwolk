@@ -499,10 +499,15 @@ width:455px;
 }
 
 /*MEDIAQUERRIES*/
+/*IPAD*/
 @media only screen
 and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : landscape) { /* STYLES GO HERE */
+
+	/*.body1{
+		background-color: green;
+	}*/
 	.wouterH{
 		width: 6em;
 		height: 12em;
@@ -541,14 +546,23 @@ and (orientation : landscape) { /* STYLES GO HERE */
 		margin-top: -5em;
 		margin-left: 13em;
 	}
+	#topbar{
+	height:100px;
+	margin:auto;
+	margin-top:135px;
+	font-family: 'Baloo', cursive;
+	color: #0D47A1;
+	font-size:36px;
+	width:455px;
+	}
 	.buttons{
 		width: 5em;
-		margin-top: -12em;
+		margin-top: -17em;
 		margin-left: 25em;
 	}
 	.wouter{
 		width: 6em;
-		height: 12em;
+		height: 14em;
 		/*background-color: blue;*/
 		margin-top: 16em;
 		margin-left: 3em;
@@ -568,12 +582,12 @@ and (orientation : landscape) { /* STYLES GO HERE */
 
 	.homeBG{
 		float: right;
-		margin-top: 11em;
+		margin-top: 7em;
 		margin-right: 2em;
 	}
 	#navContent{
 	margin:auto;
-	margin-top: -11em;
+	margin-top: -9em;
 	width:900px;
 	height:400px;
 	position:relative;
@@ -604,7 +618,7 @@ and (orientation : landscape) { /* STYLES GO HERE */
 		color: #0D47A1;
 		font-size: 2em;
 		text-align: center;
-		margin-top: -7em;
+		margin-top: -5em;
 	}
 
 	.endbutton{
@@ -617,8 +631,10 @@ and (orientation : landscape) { /* STYLES GO HERE */
 	}
 }
 
+/*MACBOOK AIR*/
+
 @media only screen
-and (min-device-width : 756px)
+and (min-device-width : 1340px)
 and (max-device-width : 1440px)
 and (orientation : landscape) { /* STYLES GO HERE */
 	.wouterH{
