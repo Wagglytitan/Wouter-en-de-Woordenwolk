@@ -141,6 +141,7 @@ function game(){
           $("#tablet").attr("src","img/tabletgeluid.png");
           tabletmusic.volume = 0.4;
           tabletmusic.play();
+          tabletmusic.loop = true;
         });
     }
 
