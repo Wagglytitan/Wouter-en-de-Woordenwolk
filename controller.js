@@ -138,7 +138,8 @@ function game(){
         $("#tablet").addClass("tabletG");
         var tabletmusic = new Audio('music/backmusic.mp3');
         $(".tabletG").click(function(){
-          $("#geluid").attr("src","img/tabletgeluid.png");
+          $("#tablet").attr("src","img/tabletgeluid.png");
+          tabletmusic.volume = 0.4;
           tabletmusic.play();
         });
     }
@@ -453,6 +454,26 @@ function game(){
       if(rnd==3){q3=questionBank[questionNumber][1];q1=questionBank[questionNumber][2];q2=questionBank[questionNumber][3];q4=questionBank[questionNumber][4];}
 
        $(stage).append('<div  class="questionText"><p>'+questionBank[questionNumber][0]+'</p></div><div id="1" class="pix"><img class="wolk" src="img/'+q1+'"></div><div id="2" class="pix"><img class="wolk" src="img/'+q2+'"></div><div id="3" class="pix"><img class="wolk" src="img/'+q3+'"></div><div id="4" class="onzichtbaar pix"><audio controls autoplay><source src="music/Nwoorden/'+q4+'" type="audio/mp3"></audio></div>');
+
+       $(".wouter").click(function(){
+         var rnd=Math.random()*3;
+        rnd=Math.ceil(rnd);
+         var q1;
+         var q2;
+         var q3;
+         var q4;
+
+        if(rnd==1){q4=questionBank[questionNumber][4];}
+        if(rnd==2){q4=questionBank[questionNumber][4];}
+        if(rnd==3){q4=questionBank[questionNumber][4];}
+         //var woord = document.getElementById('4');
+         //woord.volume = 0.4;
+         $(stage).append('<div id="4" class="onzichtbaar pix"><audio controls autoplay><source src="music/Nwoorden/'+q4+'" type="audio/mp3"></audio></div>')
+         //<audio controls autoplay><source src="music/Nwoorden/'+q4+'" type="audio/mp3"></audio>
+
+         //woord.play();
+         console.log('woord');
+     });
 
        if (hasBeenClicked == false) {
 
