@@ -154,7 +154,7 @@ function game(){
         $(".homeB").removeClass("onzichtbaar");
       })
 
-      $(".uitleg").click(function(){
+      /*$(".uitleg").click(function(){
         $(".video").removeClass("onzichtbaar");
         backmusic.volume = 0.0;
          //document.getElementById('vid')[0].play();
@@ -165,7 +165,7 @@ function game(){
     vid.addEventListener('ended', function(){
       backmusic.volume = 0.4;
         $(".video").addClass("onzichtbaar");
-    });
+    });*/
 
       var fontClicked = false;
       var previousFont=null;
@@ -469,7 +469,7 @@ function game(){
         if(rnd==3){q4=questionBank[questionNumber][4];}
          //var woord = document.getElementById('4');
          //woord.volume = 0.4;
-         $(stage).append('<div id="4" class="onzichtbaar pix"><audio controls autoplay><source src="music/Nwoorden/'+q4+'" type="audio/mp3"></audio></div>')
+         $(stage).append('<div id="4" class="onzichtbaar pix"><audio><source src="music/Nwoorden/'+q4+'" type="audio/mp3"></audio></div>')
          //<audio controls autoplay><source src="music/Nwoorden/'+q4+'" type="audio/mp3"></audio>
 
          //woord.play();
