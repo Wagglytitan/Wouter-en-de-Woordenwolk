@@ -133,6 +133,10 @@ function game(){
 
       //END STARS function
 
+      if(WURFL.form_factor == "Tablet"){
+        $("#tablet").removeClass("onzichtbaar");
+    }
+
       $(".go").on("click", function(){
         $(".home").addClass("onzichtbaar");
         $(".geluid").addClass("onzichtbaar");
