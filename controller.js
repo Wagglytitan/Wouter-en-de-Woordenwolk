@@ -135,6 +135,12 @@ function game(){
 
       if(WURFL.form_factor == "Tablet"){
         $("#tablet").removeClass("onzichtbaar");
+        $("#tablet").addClass("tabletG");
+        var tabletmusic = new Audio('music/backmusic.mp3');
+        $(".tabletG").click(function(){
+          $("#geluid").attr("src","img/tabletgeluid.png");
+          tabletmusic.play();
+        });
     }
 
       $(".go").on("click", function(){
