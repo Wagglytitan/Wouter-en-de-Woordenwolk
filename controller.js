@@ -238,7 +238,7 @@ function game(){
       $("p").toggleClass("sterrentekst");
       var sterre = document.getElementsByClassName("sterreH");
       sterre[0].innerHTML = '<img class="swingimage" src=\'sterre.png\'>';
-      var audiow = new Audio('music/samen.mp3');
+      var audiow = new Audio('music/samenL.mp3');
       audiow.play();
         hasBeenClicked = true;
         if(this===previousTarget) {
