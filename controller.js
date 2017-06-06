@@ -17,6 +17,9 @@ function game(){
 
       var backmusic = document.querySelector('audio');
       backmusic.volume = 0.4;
+
+      /*var end = new Audio('music/einde.mp3');
+      end.play();*/
       //STARS function
       particlesJS();
 
@@ -189,7 +192,7 @@ function game(){
 
     var uitlegClicked = false;
     var previousUitleg=null;
-    var uitleg0 = new Audio('music/uitleg0.mp3');
+    var uitleg0 = new Audio('music/uitleg.mp3');
     jQuery('#uitleg').click(function(){
       uitleg0.play();
       $("#geluid").attr("src","img/uitlegG.png");
@@ -200,11 +203,11 @@ function game(){
       $('.audio').off('click');
       var back = document.querySelector('audio');
       back.volume = 0.0;
-      var uitleg1 = new Audio('music/uitleg01.mp3');
+      var uitleg1 = new Audio('music/lettertype.mp3');
       $(".uitleg1").click(function(){
         uitleg1.play();
       });
-       var uitleg2 = new Audio('music/uitleg2.mp3');
+       var uitleg2 = new Audio('music/mettwee.mp3');
        $(".uitleg2").click(function(){
          uitleg2.play();
        });
@@ -469,9 +472,10 @@ function game(){
         if(rnd==3){q4=questionBank[questionNumber][4];}
          //var woord = document.getElementById('4');
          //woord.volume = 0.4;
-         $(stage).append('<div id="4" class="onzichtbaar pix"><audio><source src="music/Nwoorden/'+q4+'" type="audio/mp3"></audio></div>')
-         //<audio controls autoplay><source src="music/Nwoorden/'+q4+'" type="audio/mp3"></audio>
-
+         //var woord = document.querySelector('audio');
+         //backmusic.volume = 0.4;
+         $(stage).append('<div id="4" class="onzichtbaar pix"><audio controls autoplay><source src="music/Nwoorden/'+q4+'" type="audio/mp3"></audio></div>')
+         //var woord = new Audio("music/Nwoorden/'+q4+'");
          //woord.play();
          console.log('woord');
      });
@@ -546,6 +550,9 @@ function game(){
           //<INPUT TYPE="image" id="keuze" class="choice" src="keuze.png" VALUE="Keuzescherm">
           $(".homeBG").addClass("onzichtbaar");
 
+          var end = new Audio('music/einde.mp3');
+          end.play();
+
           if (hasBeenClicked == false) {
 
               console.log('gewoon font');
@@ -597,58 +604,6 @@ function game(){
 
               }
           }
-
-
-          /*$(".choice").on("click", function () {
-            //location.reload();
-            //window.localStorage.clear();
-                console.log('choice');
-                $("#game1").html("");
-                $("#game2").html("");
-                //$("#navContent").trigger('reset');
-                //document.getElementById("navContent").reset();
-                var questionNumber=0;
-                console.log('test');
-                $(".choice").addClass("click");
-                $(".keuzescherm").removeClass("onzichtbaar");
-                $(".overzicht").addClass("onzichtbaar");
-                $(".overzichttekst").addClass("onzichtbaar");
-                $(".game").addClass("onzichtbaar");
-                $(".home").addClass("onzichtbaar");
-
-                /*
-                  if (hasBeenClicked == false) {
-                      // The link has been clicked.
-                      console.log('geluid');
-                      getQuestion();
-                      //soundN();
-                  } else if (hasBeenClicked == true) {
-                      // The link has not been clicked.
-                      //hasBeenClicked = true;
-                      soundN();
-                      console.log("Ngeluid");
-                  }
-
-
-                function soundN(){
-                    if (hasBeenClicked == true) {
-                        // The link has been clicked.
-                        console.log('Ngeluid2');
-                        getQuestionNSound();
-                        //sound();
-                    } else {
-                        // The link has not been clicked.
-                        hasBeenClicked = false;
-                        //sound();
-                        console.log("geluid");
-                    }
-               }
-
-
-                game();
-                game2();
-                console.log('game');
-        	})*/
 
       	}//display final slide
   }//game function
