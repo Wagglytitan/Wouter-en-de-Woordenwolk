@@ -457,7 +457,7 @@ function game(){
       if(rnd==2){q2=questionBank[questionNumber][1];q3=questionBank[questionNumber][2];q1=questionBank[questionNumber][3];q4=questionBank[questionNumber][4];}
       if(rnd==3){q3=questionBank[questionNumber][1];q1=questionBank[questionNumber][2];q2=questionBank[questionNumber][3];q4=questionBank[questionNumber][4];}
 
-       $(stage).append('<div  class="questionText"><p>'+questionBank[questionNumber][0]+'</p></div><div id="1" class="pix"><img class="wolk" src="img/'+q1+'"></div><div id="2" class="pix"><img class="wolk" src="img/'+q2+'"></div><div id="3" class="pix"><img class="wolk" src="img/'+q3+'"></div><div id="4" class="onzichtbaar pix"><audio controls autoplay><source src="music/Nwoorden/'+q4+'" type="audio/mp3"></audio></div>');
+       $(stage).append('<div  class="questionText"><p>'+questionBank[questionNumber][0]+'</p></div><div id="1" class="pix"><img class="wolk" src="img/'+q1+'"></div><div id="2" class="pix"><img class="wolk" src="img/'+q2+'"></div><div id="3" class="pix"><img class="wolk" src="img/'+q3+'"></div><div id="4" class="onzichtbaar pix"><audio id="word" controls autoplay><source src="music/Nwoorden/'+q4+'" type="audio/mp3"></audio></div>');
 
        $(".wouter").click(function(){
          var rnd=Math.random()*3;
@@ -470,13 +470,13 @@ function game(){
         if(rnd==1){q4=questionBank[questionNumber][4];}
         if(rnd==2){q4=questionBank[questionNumber][4];}
         if(rnd==3){q4=questionBank[questionNumber][4];}
-         //var woord = document.getElementById('4');
+         var woord = document.getElementById('word');
          //woord.volume = 0.4;
          //var woord = document.querySelector('audio');
          //backmusic.volume = 0.4;
-         $(stage).append('<div id="4" class="onzichtbaar pix"><audio controls autoplay><source src="music/Nwoorden/'+q4+'" type="audio/mp3"></audio></div>')
+         //$(stage).append('<div id="4" class="onzichtbaar pix"><audio controls autoplay><source src="music/Nwoorden/'+q4+'" type="audio/mp3"></audio></div>')
          //var woord = new Audio("music/Nwoorden/'+q4+'");
-         //woord.play();
+         woord.play();
          console.log('woord');
      });
 
