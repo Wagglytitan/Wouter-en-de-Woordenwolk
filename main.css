@@ -191,6 +191,10 @@ footer p{
 	margin-left: 15em;
 }
 
+#img1{
+	margin-top: 7em;
+}
+
 .sterre{
 	width: 3em;
 	height: 6em;
@@ -350,6 +354,21 @@ width:455px;
  -moz-animation:wolk1 5s ease-in-out infinite;
  -o-animation:wolk1 5s ease-in-out infinite;
  animation:wolk1 5s ease-in-out infinite;
+}
+
+/*ANIMATIE RONDDRAAIEN*/
+@keyframes spin {
+ 0%,100%{ transform:translate(0, -5px) rotate(100eg);}
+  50%{ transform:translate(-5px, 10px) rotate(-360deg); }
+}
+
+.spin{
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+		-webkit-animation:spin 5s ease-in-out infinite;
+ -moz-animation:spin 5s ease-in-out infinite;
+ -o-animation:spin 5s ease-in-out infinite;
+ animation:spin 5s ease-in-out infinite;
 }
 
 

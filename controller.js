@@ -549,6 +549,14 @@ function game(){
       		$(stage).append('<div class="endText"><p>Gefeliciteerd je hebt het heel goed gedaan!<br>Klik hieronder om terug te keren.</p><div class="endbutton"><INPUT TYPE="image" class="reload" src="menu.png" onClick="history.go(0)" VALUE="Menu"> </div></div>')
           //<INPUT TYPE="image" id="keuze" class="choice" src="keuze.png" VALUE="Keuzescherm">
           $(".homeBG").addClass("onzichtbaar");
+          $("#img1").removeClass("swingimage");
+          $("#img1").addClass("spin");
+
+          if(WURFL.form_factor == "Tablet"){
+            $("#img1").removeClass("spin");
+            $("#img1").addClass("swingimage");
+            });
+        }
 
           var end = new Audio('music/einde.mp3');
           end.play();
