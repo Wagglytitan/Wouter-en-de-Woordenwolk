@@ -598,6 +598,9 @@ and (orientation : landscape) { /* STYLES GO HERE */
 		margin-top: 16em;
 		margin-left: 3em;
 	}
+	#img1{
+		margin-top: 0em;
+	}
 	.sterre{
 		width: 3em;
 		height: 6em;
