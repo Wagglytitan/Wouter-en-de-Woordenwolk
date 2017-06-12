@@ -551,11 +551,13 @@ function game(){
           $(".homeBG").addClass("onzichtbaar");
           $("#img1").removeClass("swingimage");
           $("#img1").addClass("spin");
+          $('#img1').attr('src','woutergroen.png');
 
           if(WURFL.form_factor == "Tablet"){
             $("#img1").removeClass("spin");
             $("#img1").addClass("swingimage");
-            
+            $('#img1').attr('src','woutergroen.png');
+
         }
 
           var end = new Audio('music/einde.mp3');
