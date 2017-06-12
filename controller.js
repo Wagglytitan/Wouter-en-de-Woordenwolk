@@ -555,7 +555,7 @@ function game(){
           if(WURFL.form_factor == "Tablet"){
             $("#img1").removeClass("spin");
             $("#img1").addClass("swingimage");
-            };
+            
         }
 
           var end = new Audio('music/einde.mp3');
