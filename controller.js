@@ -286,6 +286,7 @@ function game(){
       	$(".niveau1").on("click", function () {
               console.log('niveau1');
               $(".keuzescherm").addClass("onzichtbaar");
+              $("#img0").removeClass("lachen");
               $(".game").removeClass("onzichtbaar");
               $(".homeBG").removeClass("onzichtbaar");
               		$.getJSON('activity1.json', function(data) {
@@ -310,6 +311,7 @@ function game(){
         $(".niveau2").on("click", function () {
           console.log('niveau2');
           $(".keuzescherm").addClass("onzichtbaar");
+          $("#img0").removeClass("lachen");
           $(".game").removeClass("onzichtbaar");
           $(".homeBG").removeClass("onzichtbaar");
       		$.getJSON('activity2.json', function(data) {
@@ -335,6 +337,7 @@ function game(){
         $(".niveau3").on("click", function () {
           console.log('niveau2');
           $(".keuzescherm").addClass("onzichtbaar");
+          $("#img0").removeClass("lachen");
           $(".game").removeClass("onzichtbaar");
           $(".homeBG").removeClass("onzichtbaar");
       		$.getJSON('activity3.json', function(data) {
@@ -363,6 +366,7 @@ function game(){
       	$(".niveau1").on("click", function () {
               console.log('niveau1');
               $(".keuzescherm").addClass("onzichtbaar");
+              $("#img0").removeClass("lachen");
               $(".game").removeClass("onzichtbaar");
               $(".homeBG").removeClass("onzichtbaar");
               		$.getJSON('activity1.json', function(data) {
@@ -390,6 +394,7 @@ function game(){
         $(".niveau2").on("click", function () {
           console.log('niveau2');
           $(".keuzescherm").addClass("onzichtbaar");
+          $("#img0").removeClass("lachen");
           $(".game").removeClass("onzichtbaar");
           $(".homeBG").removeClass("onzichtbaar");
       		$.getJSON('activity2.json', function(data) {
@@ -418,6 +423,7 @@ function game(){
         $(".niveau3").on("click", function () {
           console.log('niveau2');
           $(".keuzescherm").addClass("onzichtbaar");
+          $("#img0").removeClass("lachen");
           $(".game").removeClass("onzichtbaar");
           $(".homeBG").removeClass("onzichtbaar");
       		$.getJSON('activity3.json', function(data) {

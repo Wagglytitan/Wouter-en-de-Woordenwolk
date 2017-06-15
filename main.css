@@ -371,6 +371,20 @@ width:455px;
  animation:spin 5s ease-in-out infinite;
 }
 
+/*ANIMATIE LACHEN*/
+@keyframes lachen {
+  0%,100%{ transform:translate(0px, 20px)}
+  50%{ transform:translate(0px, 40px) }
+}
+
+.lachen{
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+		-webkit-animation:lachen 0.5s ease-in-out infinite;
+ -moz-animation:lachen 0.5s ease-in-out infinite;
+ -o-animation:lachen 0.5s ease-in-out infinite;
+ animation:lachen 0.5s infinite;
+}
 
 /*CLOUDS*/
 
