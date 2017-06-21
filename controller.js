@@ -157,7 +157,7 @@ function game(){
         $(".homeB").removeClass("onzichtbaar");
       })
 
-      $(".uitleg").click(function(){
+    /*  $(".uitleg").click(function(){
         $(".video").removeClass("onzichtbaar");
         backmusic.volume = 0.0;
          //document.getElementById('vid')[0].play();
@@ -168,7 +168,7 @@ function game(){
     vid.addEventListener('ended', function(){
       backmusic.volume = 0.4;
         $(".video").addClass("onzichtbaar");
-    });
+    }); */
 
       var fontClicked = false;
       var previousFont=null;
